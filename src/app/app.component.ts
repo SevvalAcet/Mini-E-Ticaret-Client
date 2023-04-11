@@ -14,10 +14,5 @@ declare var $: any;
 })
 export class AppComponent {
   title = 'ETicaretClient';
-  constructor(private toastrService: CustomToastrService) {
-    toastrService.message('Uyarı', 'Başarısız', {
-      messageType: ToastrMessageType.Error,
-      position: ToastrPosition.TopCenter,
-    });
-  }
+  constructor() {}
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 import {
   AlertifyService,
   MessageType,
@@ -10,20 +12,12 @@ import {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit {
-  constructor(private alertify: AlertifyService) {}
-
-  ngOnInit(): void {}
-
-  m() {
-    this.alertify.message('Merhaba', {
-      messageType: MessageType.Success,
-      delay: 5,
-      position: Position.TopRight,
-    });
+export class DashboardComponent extends BaseComponent implements OnInit {
+  constructor(private alertify: AlertifyService, spinner: NgxSpinnerService) {
+    super(spinner);
   }
 
-  d() {
-    this.alertify.dismiss();
+  ngOnInit(): void {
+    this.showSpinner(SpinnerType.BallSpin);
   }
 }
