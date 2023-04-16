@@ -15,6 +15,8 @@ export class ProductsComponent extends BaseComponent{
 
   ngOnInit(): void {
     this.showSpinner(SpinnerType.BallSpin);
-    this.httpClientService.get
+    this.httpClientService.get({
+      controller:"products",
+    }).subscribe(data=>console.log(data));
   }
 }
