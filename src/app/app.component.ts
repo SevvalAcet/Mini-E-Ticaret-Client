@@ -16,3 +16,5 @@ export class AppComponent {
   title = 'ETicaretClient';
   constructor() {}
 }
+
+$.get("https://localhost:7230/swagger/index.html")
