@@ -18,5 +18,13 @@ export class ProductsComponent extends BaseComponent{
     this.httpClientService.get({
       controller:"products",
     }).subscribe(data=>console.log(data));
+
+    this.httpClientService.post({
+      controller:"products"
+    },{
+     name:"Kalem",
+     stock:100,
+     price:15
+    }).subscribe();
   }
 }
